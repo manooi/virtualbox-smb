@@ -1,8 +1,14 @@
 # VM SMB
-Spin up vm in virtualbox, and use it to run smb server.
+This repository provides a guide to spinning up a virtual machine (VM) in VirtualBox and configuring it to run an SMB (Samba) server. The SMB server allows file sharing between systems over a network. Follow the steps to set up VirtualBox Guest Additions, configure shared folders, and run an SMB server on your VM.
 
+## Features:
+- Install and configure VirtualBox Guest Additions for better VM integration.
+- Set up a shared folder between the host and VM using VirtualBox.
+- Install and configure an SMB server for network file sharing from the VM.
 
-## 1. Install Guest Additions
+## Instructions:
+
+### 1. Install Guest Additions
 - Download `VBoxGuestAdditions_7.1.0.iso`
 
 - In the bottom right corner, mount the CD.
@@ -15,7 +21,7 @@ cd /media/<USERNAME>/VBox_GAs_*
 sudo ./VBoxLinuxAdditions.run
 ```
 
-## 2. Share folder in VirtualBox
+### 2. Share folder in VirtualBox
 - In VirtualBox Shared Folder, add new folder.
 - Select 'Auto-mount' and 'Make Permanent'
 - Add user to `vboxsf` group
@@ -25,7 +31,7 @@ sudo ./VBoxLinuxAdditions.run
   sudo adduser <USERNAME> vboxsf
   ```
 
-## 3. SMB
+### 3. SMB
 ```bash
 # Install smb
 sudo apt install smb
